@@ -1,8 +1,6 @@
 import random
-from django.http import HttpResponse, JsonResponse
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.parsers import JSONParser
 from rock_paper_scissors.models import Choice, Turn
@@ -10,7 +8,14 @@ from rock_paper_scissors.serializers import ChoiceSerializer, TurnSerializer
 from loguru import logger
 
 class RockPaperScissorsView(APIView):
+    """
+    Main view to implement playing Rock, Paper, Scissors.
+    """
     def post(self, request):
+        """
+        API endpoint to play Rock, Paper, Scissors.
+        Request body should be deserializable to a :any:`~rock_paper_scissors.models.Choice`
+        """
         data = JSONParser().parse(request)
         choice_serializer = ChoiceSerializer(data=data)
 
@@ -27,7 +32,14 @@ class RockPaperScissorsView(APIView):
 
         return Response(turn_serializer.data)
 
-def turn(player_choice, ai_choice):
+def turn(player_choice: Choice.InnerChoice, ai_choice: Choice.InnerChoice) -> Turn:
+    """
+    Compute a turn outcome for a player against an AI given two choices, following these rules:
+     * Paper beats Rock
+     * Rock beats Scissors
+     * Scissors beats Paper
+     * Equal choices are a draw
+    """
     ROCK = Choice.InnerChoice.ROCK
     PAPER = Choice.InnerChoice.PAPER
     SCISSORS = Choice.InnerChoice.SCISSORS
