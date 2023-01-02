@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "rps"
+version = "0.1.0"
+description = ""
+authors = ["Giovanni Berti <dev.giovanniberti@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^4.1.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
