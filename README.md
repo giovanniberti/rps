@@ -72,3 +72,17 @@ Where `$OUTCOME` is either `draw`, `win` or `lose`.
 You can check the hand that the computer played by inspecting the logs.
 
 Note that currently the computer chooses which hand to play randomly with a uniform distribution.
+
+## Running tests
+
+Similarly, you can run tests with either
+
+```shell
+$ poetry run python manage.py test
+```
+
+or
+
+```shell
+$ python manage.py test
+```
