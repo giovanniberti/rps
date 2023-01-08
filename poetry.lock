@@ -98,8 +98,8 @@ dev = ["black (>=19.3b0)", "pytest (>=4.6.2)"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.11"
-content-hash = "89b6ccf4ceadd7b83e0d79d6e6f7ba6fd8da4e8ca5e3162b558de68b0b964c3c"
+python-versions = "^3.9"
+content-hash = "4a23ad9da4939fb6d8517ed6b91365aca31d560198b238b71d542d5399dd0c76"
 
 [metadata.files]
 asgiref = [
