@@ -1,5 +1,11 @@
 # Rock Paper Scissors API
 
+ - [How to run](#how-to-run)
+   - [With `poetry` (recommended)](#with-poetry-recommended) 
+   - [Without poetry](#without-poetry)
+ - [Calling the API](#calling-the-api)
+ - [Running tests](#running-tests)
+
 Hello :)
 
 This is a simple Django project implementing a Rock-Paper-Scissors API to play the game.
